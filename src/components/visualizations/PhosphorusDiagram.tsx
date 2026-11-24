@@ -11,8 +11,8 @@ type Mode = 'uv' | 'blue';
 
 /* ───────── Илюстративни параметри на двата метода ───────── */
 const MODES: Record<Mode, { blank: number; k: number; lambda: number; beam: string; curve: string; name: string }> = {
-  uv: { blank: 0.04, k: 0.38, lambda: 340, beam: 'var(--v-k)', curve: 'var(--v-k)', name: 'Директен UV метод' },
-  blue: { blank: 0.05, k: 0.42, lambda: 660, beam: 'var(--v-blood)', curve: 'var(--v-moblue)', name: 'Молибденово синьо' },
+  uv: { blank: 0.04, k: 0.38, lambda: 340, beam: 'var(--v-light)', curve: 'var(--v-k)', name: 'Директен UV метод' },
+  blue: { blank: 0.05, k: 0.42, lambda: 660, beam: 'var(--v-light)', curve: 'var(--v-moblue)', name: 'Молибденово синьо' },
 };
 const C_CAL = 1.5; // илюстративен калибратор, mmol/L
 const MGDL = 3.097; // 1 mmol/L фосфор ≈ 3,10 mg/dL
@@ -78,7 +78,7 @@ const STAGES: Stage[] = [
     body: (m) =>
       m === 'uv'
         ? [
-            'Лъч в **близкия ултравиолетов** диапазон (виолетовият лъч; типично около **340 nm**) преминава през кюветата. Комплексът поглъща част от него.',
+            'Лъч в **близкия ултравиолетов** диапазон (типично около **340 nm**) преминава през кюветата. Комплексът поглъща част от него.',
             'Дължината на вълната (и втората дължина за бланк) е **определена от производителя** – напр. 340 nm или 365 nm. Кюветата трябва да пропуска тази дължина.',
           ]
         : [
@@ -168,7 +168,7 @@ export function PhosphorusDiagram() {
       title="Определяне на фосфор чрез реакция с молибденова киселина"
       subtitle="Реакцията стъпка по стъпка – директен UV метод и молибденово синьо, спектри и влияние на мътността."
       icon="atom"
-      note="Схематична образователна илюстрация. Броят на частиците, цветовете, абсорбциите, спектрите и калибраторът са илюстративни и не представляват реални данни. Състав на реактива, обеми и дължини на вълната се определят от производителя."
+      note="Схематична образователна илюстрация. Броят на частиците, цветовете, абсорбциите, спектрите и калибраторът са илюстративни и не представляват реални данни. Състав на реактива, обеми и дължини на вълната се определят от производителя. Цветът на светлинния лъч е условен (ултравиолетовата светлина не се вижда)."
     >
       <div className="space-y-4">
         <div className="overflow-hidden rounded-xl border border-line" style={{ background: 'var(--v-panel)' }}>
@@ -186,7 +186,7 @@ export function PhosphorusDiagram() {
             </Txt>
 
             {/* Светлинен лъч */}
-            <PhotometerBeam uid={uid} T={T} on={beamOn} cuvX={CUV.x} cuvW={CUV.w} color={M.beam} />
+            <PhotometerBeam uid={uid} T={T} on={beamOn} cuvX={CUV.x} cuvW={CUV.w} color={M.beam} dense="var(--v-light-lo)" />
 
             <rect x={24} y={168} width={40} height={44} rx={7} fill="var(--v-metal)" />
             <circle cx={64} cy={190} r={7} fill={M.beam} opacity={beamOn ? 1 : 0.35} />
