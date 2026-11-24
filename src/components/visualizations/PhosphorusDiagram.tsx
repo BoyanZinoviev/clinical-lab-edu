@@ -4,7 +4,7 @@ import { StepControls, Slider, Segmented, Toggle } from '../ui/Controls';
 import { RichText } from '../ui/RichText';
 import { useStepper } from '../../hooks/useStepper';
 import { useTween } from '../../hooks/useTween';
-import { Cuvette, Jig, Txt } from './shared';
+import { Cuvette, Jig, PhotometerBeam, Txt, beamLevel } from './shared';
 import { clamp, fmt, mulberry32 } from '../../lib/stats';
 
 type Mode = 'uv' | 'blue';
@@ -178,13 +178,6 @@ export function PhosphorusDiagram() {
             role="img"
             aria-label={`Схема на определянето на фосфор с молибденова киселина, метод: ${M.name}, етап ${stage + 1}: ${s.title(mode)}`}
           >
-            <defs>
-              <linearGradient id={`${uid}-beam`} x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0" stopColor={M.beam} stopOpacity="0.6" />
-                <stop offset="1" stopColor={M.beam} stopOpacity={0.6 * T} />
-              </linearGradient>
-            </defs>
-
             <Txt x={20} y={34} size={15} weight={800}>
               {stage + 1} · {s.label(mode)}
             </Txt>
@@ -193,12 +186,7 @@ export function PhosphorusDiagram() {
             </Txt>
 
             {/* Светлинен лъч */}
-            <g opacity={beamOn ? 1 : 0}>
-              <rect x={64} y={180} width={198} height={20} fill={M.beam} opacity={0.5} />
-              <rect x={CUV.x} y={180} width={CUV.w} height={20} fill={`url(#${uid}-beam)`} />
-              <rect x={CUV.x + CUV.w} y={180} width={590 - (CUV.x + CUV.w)} height={20} fill={M.beam} opacity={0.55 * T} />
-              <line x1={64} y1={190} x2={590} y2={190} stroke={M.beam} strokeWidth={2} className="beam" />
-            </g>
+            <PhotometerBeam uid={uid} T={T} on={beamOn} cuvX={CUV.x} cuvW={CUV.w} color={M.beam} />
 
             <rect x={24} y={168} width={40} height={44} rx={7} fill="var(--v-metal)" />
             <circle cx={64} cy={190} r={7} fill={M.beam} opacity={beamOn ? 1 : 0.35} />
@@ -279,7 +267,7 @@ export function PhosphorusDiagram() {
 
             {/* Спектрофотометър */}
             <rect x={590} y={148} width={104} height={84} rx={9} fill="var(--v-detector)" />
-            <rect x={586} y={178} width={9} height={24} rx={2} fill={M.beam} opacity={stage >= 5 ? 0.9 : 0.35} />
+            <rect x={586} y={178} width={9} height={24} rx={2} fill={M.beam} opacity={stage >= 5 ? 0.3 + 0.7 * beamLevel(T) : 0.35} />
             <Txt x={642} y={167} anchor="middle" size={11} color="#ffffff" weight={600} mono opacity={stage >= 5 ? 1 : 0}>
               λ ≈ {M.lambda} nm
             </Txt>

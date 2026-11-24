@@ -96,6 +96,7 @@
   --v-antibody: #0d9488;
   --v-hapten: #d97706;
   --v-light: #f2b800;
+  --v-light-lo: #d97706;
   --v-detector: #3b5b8c;
   --v-na: #d97706;
   --v-k: #7c3aed;
@@ -138,6 +139,7 @@
   --v-antibody: #2dd4bf;
   --v-hapten: #fbbf24;
   --v-light: #ffd54a;
+  --v-light-lo: #e69a00;
   --v-detector: #7ea3da;
   --v-na: #fb923c;
   --v-k: #a78bfa;
