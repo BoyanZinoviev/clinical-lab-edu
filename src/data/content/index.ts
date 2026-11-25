@@ -2,6 +2,8 @@ import type { ModuleContent } from '../../types';
 import { turbidimetryContent } from './turbidimetry';
 import { magnesiumContent } from './magnesium';
 import { phosphorusContent } from './phosphorus';
+import { glucoseContent } from './glucose';
+import { creatinineContent } from './creatinine';
 import { iseContent } from './ise';
 import { bloodGasContent } from './bloodGas';
 import { hplcContent } from './hplc';
@@ -13,6 +15,8 @@ export const contentById: Record<string, ModuleContent> = {
   turbidimetriya: turbidimetryContent,
   magnezii: magnesiumContent,
   fosfor: phosphorusContent,
+  glyukoza: glucoseContent,
+  kreatinin: creatinineContent,
   ise: iseContent,
   'kravno-gazov': bloodGasContent,
   hplc: hplcContent,

@@ -73,7 +73,7 @@ export default function Home() {
       <section aria-labelledby="modules-h">
         <div className="mb-4 flex items-end justify-between gap-3">
           <div>
-            <p className="eyebrow !m-0">Осем урока</p>
+            <p className="eyebrow !m-0">Десет урока</p>
             <h2 id="modules-h" className="!m-0 text-[1.5rem] font-extrabold text-ink">
               Учебни модули
             </h2>

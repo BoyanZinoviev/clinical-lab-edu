@@ -7,6 +7,8 @@ import NotFound from './pages/NotFound';
 import Turbidimetry from './pages/Turbidimetry';
 import Magnesium from './pages/Magnesium';
 import Phosphorus from './pages/Phosphorus';
+import Glucose from './pages/Glucose';
+import Creatinine from './pages/Creatinine';
 import ISE from './pages/ISE';
 import BloodGas from './pages/BloodGas';
 import HPLC from './pages/HPLC';
@@ -25,6 +27,10 @@ function Page({ path }: { path: string }) {
       return <Magnesium />;
     case '/metodi/fosfor':
       return <Phosphorus />;
+    case '/metodi/glyukoza':
+      return <Glucose />;
+    case '/metodi/kreatinin':
+      return <Creatinine />;
     case '/metodi/ise':
       return <ISE />;
     case '/metodi/kravno-gazov-analiz':

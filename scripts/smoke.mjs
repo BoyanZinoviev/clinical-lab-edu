@@ -12,7 +12,7 @@ const require = createRequire('/home/claude/.npm-global/lib/node_modules/x.js');
 const { chromium } = require('playwright');
 
 const file = pathToFileURL(path.join(root, 'dist-offline/index.html')).href;
-const routes = ['/', '/metodi', '/metodi/turbidimetriya', '/metodi/magnezii', '/metodi/fosfor', '/metodi/ise', '/metodi/kravno-gazov-analiz', '/metodi/hplc', '/kalibraciya', '/kachestven-kontrol', '/za-proekta', '/nesashtestvuvasht'];
+const routes = ['/', '/metodi', '/metodi/turbidimetriya', '/metodi/magnezii', '/metodi/fosfor', '/metodi/glyukoza', '/metodi/kreatinin', '/metodi/ise', '/metodi/kravno-gazov-analiz', '/metodi/hplc', '/kalibraciya', '/kachestven-kontrol', '/za-proekta', '/nesashtestvuvasht'];
 
 const browser = await chromium.launch({ executablePath: process.env.CHROME ?? '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 let failures = 0;

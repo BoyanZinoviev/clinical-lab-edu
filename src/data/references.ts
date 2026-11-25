@@ -208,6 +208,124 @@ export const references: Reference[] = [
     note: 'Пример за анализатор, отчитащ промяната на абсорбцията при 365 nm.',
   },
 
+  /* ───────── Глюкоза (GOD-POD) ───────── */
+  {
+    id: 'trinder1969',
+    kind: 'article',
+    citation: 'Trinder P. Determination of glucose in blood using glucose oxidase with an alternative oxygen acceptor. Ann Clin Biochem. 1969;6(1):24–27.',
+    note: 'Оригиналното описание на свързаната реакция с глюкозооксидаза, пероксидаза и хромоген (реакция на Trinder).',
+  },
+  {
+    id: 'barham1972',
+    kind: 'article',
+    citation: 'Barham D, Trinder P. An improved colour reagent for the determination of blood glucose by the oxidase system. Analyst. 1972;97(1151):142–145.',
+    note: 'Подобрен хромогенен реагент (4-аминофеназон) с висока чувствителност при около 515 nm.',
+  },
+  {
+    id: 'sacks2011',
+    kind: 'article',
+    citation: 'Sacks DB. A1C versus glucose testing: a comparison. Diabetes Care. 2011;34(2):518–523.',
+    note: 'Гликолиза in vitro: спадане на глюкозата с около 5–7 % на час и ролята на флуорида.',
+  },
+  {
+    id: 'ada2026',
+    kind: 'guideline',
+    citation:
+      'American Diabetes Association Professional Practice Committee. 2. Diagnosis and classification of diabetes: Standards of Care in Diabetes—2026. Diabetes Care. 2026;49(Suppl 1):S27–S49.',
+    note: 'Диагностични критерии по плазмена глюкоза на гладно; определение за „гладно“.',
+  },
+  {
+    id: 'who2006',
+    kind: 'guideline',
+    citation:
+      'World Health Organization, International Diabetes Federation. Definition and diagnosis of diabetes mellitus and intermediate hyperglycaemia: report of a WHO/IDF consultation. Geneva: WHO; 2006.',
+    note: 'Критерии на СЗО за диабет и междинна хипергликемия.',
+  },
+  {
+    id: 'thermo-glu',
+    kind: 'manufacturer',
+    citation: 'Thermo Fisher Scientific. Infinity Glucose Oxidase Liquid Stable Reagent. Листовка на реактив.',
+    note: 'Пример за GOD-POD реактив с 4-аминоантипирин и 4-хидроксибензоена киселина; червено хинонеимино багрило, измервано в диапазон 460–560 nm.',
+  },
+
+  /* ───────── Креатинин (метод на Яфе) ───────── */
+  {
+    id: 'delanghe2011',
+    kind: 'article',
+    citation: 'Delanghe JR, Speeckaert MM. Creatinine determination according to Jaffe – what does it stand for? Clin Kidney J. 2011;4(2):83–86.',
+    note: 'История на реакцията (Jaffé, 1886; Folin), псевдохромогени и липсата на единна стандартна рецепта.',
+  },
+  {
+    id: 'peake2006',
+    kind: 'article',
+    citation: 'Peake M, Whiting M. Measurement of serum creatinine – current status and future goals. Clin Biochem Rev. 2006;27(4):173–184.',
+    note: 'Кинетични и компенсирани методи на Яфе, интерференции с посока, ензимни методи.',
+  },
+  {
+    id: 'myers2006',
+    kind: 'guideline',
+    citation:
+      'Myers GL, Miller WG, Coresh J, et al. Recommendations for improving serum creatinine measurement: a report from the Laboratory Working Group of the National Kidney Disease Education Program. Clin Chem. 2006;52(1):5–18.',
+    note: 'Стандартизация на креатинина и проследимост към референтен метод с изотопно разреждане и масспектрометрия (IDMS).',
+  },
+  {
+    id: 'drion2012',
+    kind: 'article',
+    citation:
+      'Drion I, Cobbaert C, Groenier KH, et al. Clinical evaluation of analytical variations in serum creatinine measurements: why laboratories should abandon Jaffe techniques. BMC Nephrol. 2012;13:133.',
+    note: 'Сравнение на методите на Яфе и ензимните методи в схема за външна оценка на качеството.',
+  },
+  {
+    id: 'weber1991',
+    kind: 'article',
+    citation: 'Weber JA, van Zanten AP. Interferences in current methods for measurements of creatinine. Clin Chem. 1991;37:695–700.',
+    note: 'Преглед на интерференциите при методите за измерване на креатинин.',
+  },
+  {
+    id: 'chromy2008',
+    kind: 'article',
+    citation:
+      'Chromý V, Rozkošná K, Sedlák P. Determination of serum creatinine by Jaffe method and how to calibrate to eliminate matrix interference problems. Clin Chem Lab Med. 2008;46:1127–1133.',
+    note: 'Ограничения на корекцията с постоянна стойност при методите на Яфе (напр. при деца).',
+  },
+  {
+    id: 'inker2021',
+    kind: 'article',
+    citation: 'Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. N Engl J Med. 2021;385(19):1737–1749.',
+    note: 'Уравнението CKD-EPI 2021 за оценка на скоростта на гломерулна филтрация от креатинин.',
+  },
+  {
+    id: 'kdigo2024',
+    kind: 'guideline',
+    citation:
+      'Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney Int. 2024;105(4S):S117–S314.',
+    note: 'Оценка и класификация на хроничната бъбречна болест.',
+  },
+  {
+    id: 'mayo-crea',
+    kind: 'laboratory',
+    citation: 'Mayo Clinic. Creatinine test: results (типични стойности при възрастни). Електронен ресурс: mayoclinic.org.',
+    note: 'Ориентировъчни стойности при мъже и жени и фактори като месо и креатинови добавки; всяка лаборатория използва свой референтен интервал.',
+  },
+  {
+    id: 'sekisui-crea',
+    kind: 'manufacturer',
+    citation: 'Sekisui Diagnostics. Creatinine S – Package insert (кинетичен метод на Яфе).',
+    note: 'Пример за листовка: алкална среда, пикрат, нарастване на абсорбцията при 510 nm; съдържа исторически бележки за Jaffé и Folin (1904).',
+  },
+  {
+    id: 'roche-crej2',
+    kind: 'manufacturer',
+    citation: 'Roche Diagnostics. Creatinine Jaffé Gen.2 (CREJ2) – Листовка на метода за системи cobas c.',
+    note: 'Пример за компенсиран кинетичен метод: резултатите за серум и плазма се коригират с −26 µmol/L (−0,3 mg/dL) заради протеини и кетони.',
+  },
+  {
+    id: 'spinreact-crea',
+    kind: 'manufacturer',
+    citation: 'SPINREACT S.A.U. Creatinine – Jaffé, colorimetric, kinetic. Листовка на реактив.',
+    note: 'Пример за кинетичен реактив: абсорбцията се отчита 30 s и 90 s след добавяне на пробата.',
+  },
+
   /* ───────── Производители ───────── */
   {
     id: 'inserts',

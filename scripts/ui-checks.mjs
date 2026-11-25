@@ -87,7 +87,7 @@ const desk = await browser.newContext({ viewport: { width: 1440, height: 900 } }
 {
   /* Всеки модул: 10 раздела по ред, Q&A, източници; няма протекли маркери */
   const expected = ['Въведение', 'Принцип на метода', 'Необходими компоненти', 'Графична визуализация', 'Процес на измерване', 'Интерпретация на резултатите', 'Предимства и ограничения', 'Важно за изпита', 'Терминология', 'Източници'];
-  for (const r of ['/metodi/turbidimetriya', '/metodi/magnezii', '/metodi/fosfor', '/metodi/ise', '/metodi/kravno-gazov-analiz', '/metodi/hplc', '/kalibraciya', '/kachestven-kontrol']) {
+  for (const r of ['/metodi/turbidimetriya', '/metodi/magnezii', '/metodi/fosfor', '/metodi/glyukoza', '/metodi/kreatinin', '/metodi/ise', '/metodi/kravno-gazov-analiz', '/metodi/hplc', '/kalibraciya', '/kachestven-kontrol']) {
     const p = await newPage(desk, r);
     const h2 = (await p.locator('main h2').allInnerTexts()).map((t) => t.replace(/^\s*\d+[.\s]*/, '').trim());
     const same = expected.every((e, i) => (h2[i] ?? '').toLowerCase().includes(e.toLowerCase()));
