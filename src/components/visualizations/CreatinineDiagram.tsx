@@ -20,7 +20,7 @@ const TAU_S = 400; // s
 const T1 = 30; // s – първо отчитане (кинетичен метод)
 const T2 = 90; // s – второ отчитане (кинетичен метод)
 const T_END = 300; // s – единично отчитане (крайна точка), условно
-const C_CAL = 177; // илюстративен калибратор, µmol/L (= 2,0 mg/dL)
+const C_CAL = 177; // илюстративен стандарт, µmol/L (= 2,0 mg/dL)
 const COMP = 26; // примерна компенсация, µmol/L
 const UMOL = 88.4; // µmol/L в 1 mg/dL
 const LAMBDA = 510; // типична дължина на вълната, nm
@@ -36,7 +36,7 @@ const aTot = (c: number, t: number, F: number, S: number) => BLANK + aCrea(c, t)
 function reading(mode: Mode, c: number, F: number, S: number) {
   return mode === 'kin' ? aTot(c, T2, F, S) - aTot(c, T1, F, S) : aTot(c, T_END, F, S) - BLANK;
 }
-/** Отчетена величина за калибратора (без интерференти). */
+/** Отчетена величина за стандарта (без интерференти). */
 const readingCal = (mode: Mode) => reading(mode, C_CAL, 0, 0);
 const calcResult = (mode: Mode, r: number) => Math.max(0, (r / readingCal(mode)) * C_CAL);
 
@@ -122,8 +122,8 @@ const STAGES: Stage[] = [
     title: () => 'Изчисляване на концентрацията',
     body: (m) => [
       m === 'kin'
-        ? 'ΔA на пробата се сравнява с ΔA на **калибратора**: **c = ΔA проба / ΔA кал. × c кал.**'
-        : 'Нетната абсорбция на пробата се сравнява с тази на **калибратора**: **c = (A проба − A бланк) / (A кал. − A бланк) × c кал.**',
+        ? 'ΔA на пробата се сравнява с ΔA на **стандарта**: **c = [(A₂ − A₁) проба / (A₂ − A₁) стандарт] × c стандарт**'
+        : 'Нетната абсорбция на пробата се сравнява с тази на **стандарта**: **c = (A проба − A бланк) / (A стандарт − A бланк) × c стандарт**',
       'Резултатът е в µmol/L (1 mg/dL = 88,4 µmol/L). При компенсиран метод от него се изважда фиксирана стойност. Референтни граници и клинична интерпретация са извън обхвата на тази илюстрация.',
     ],
   },
@@ -229,7 +229,7 @@ export function CreatinineDiagram() {
   return (
     <VizFrame
       title="Определяне на креатинин по метода на Jaffé"
-      subtitle="Алкален пикрат стъпка по стъпка – кинетичен метод и крайна точка, псевдохромогени, калибрация и компенсация."
+      subtitle="Алкален пикрат стъпка по стъпка – кинетичен метод и крайна точка, псевдохромогени, стандарт и компенсация."
       icon="beaker"
       note="Схематична образователна илюстрация. Броят на частиците, цветовете, абсорбциите, времената, приносът на псевдохромогените и компенсацията са илюстративни и не представляват реални данни. Състав на реактива, времена и дължини на вълната се определят от производителя. Цветът на светлинния лъч е условен."
     >
@@ -359,7 +359,7 @@ export function CreatinineDiagram() {
             <g opacity={stage === 7 ? 1 : 0} style={{ transition: 'opacity 0.5s' }}>
               <rect x={400} y={14} width={364} height={64} rx={10} fill="var(--surface)" stroke="var(--accent)" strokeWidth={1.8} />
               <Txt x={416} y={36} size={11} color="var(--v-soft)" weight={700}>
-                {comp ? `РЕЗУЛТАТ (с компенсация − ${COMP} µmol/L)` : 'РЕЗУЛТАТ (изчислен спрямо калибратор)'}
+                {comp ? `РЕЗУЛТАТ (с компенсация − ${COMP} µmol/L)` : 'РЕЗУЛТАТ (изчислен спрямо стандарт)'}
               </Txt>
               <Txt x={416} y={62} size={16} weight={800} mono>
                 Креатинин ≈ {fmt(cCalc, 0)} µmol/L ({fmt(cCalc / UMOL, 2)} mg/dL)
@@ -451,7 +451,7 @@ export function CreatinineDiagram() {
                 <ValuePill label="Пропусната светлина" value={fmt(10 ** -aMeas * 100, 0)} unit="%" kind="calculated" />
               </>
             )}
-            <ValuePill label="Резултат спрямо калибратор" value={fmt(cCalc, 0)} unit="µmol/L" kind="calculated" />
+            <ValuePill label="Резултат спрямо стандарт" value={fmt(cCalc, 0)} unit="µmol/L" kind="calculated" />
           </div>
         </div>
 
@@ -563,7 +563,7 @@ function TimeCourse({ mode, conc, fast, slow }: { mode: Mode; conc: number; fast
   );
 }
 
-/* ───────── Калибрация, псевдохромогени и компенсация ───────── */
+/* ───────── Стандарт, псевдохромогени и компенсация ───────── */
 function CalibrationPanel({
   mode,
   conc,
@@ -611,8 +611,8 @@ function CalibrationPanel({
 
   return (
     <div className="rounded-xl border border-line bg-surface p-4">
-      <p className="!m-0 text-sm font-bold text-ink">Калибрация, псевдохромогени и компенсация</p>
-      <svg viewBox={`0 0 ${W} ${H}`} className="viz-svg mx-auto mt-1 block h-auto w-full max-w-[440px]" role="img" aria-label="Калибрационна права на отчетената величина спрямо концентрацията на креатинин с отбелязани истинска и измерена стойност при наличие на псевдохромогени">
+      <p className="!m-0 text-sm font-bold text-ink">Стандарт, псевдохромогени и компенсация</p>
+      <svg viewBox={`0 0 ${W} ${H}`} className="viz-svg mx-auto mt-1 block h-auto w-full max-w-[440px]" role="img" aria-label="Права през стандарта: отчетената величина спрямо концентрацията на креатинин с отбелязани истинска и измерена стойност при наличие на псевдохромогени">
         {yTicks.map((v) => (
           <g key={v}>
             <line x1={L} x2={W - R} y1={py(v)} y2={py(v)} stroke="var(--v-grid)" />
@@ -632,7 +632,7 @@ function CalibrationPanel({
         <line x1={px(0)} y1={py(0)} x2={px(cMax)} y2={py(kCal * cMax)} stroke="var(--v-jaffe)" strokeWidth={2.5} />
         <rect x={px(C_CAL) - 4.5} y={py(rCal) - 4.5} width={9} height={9} fill="var(--surface)" stroke="var(--v-jaffe)" strokeWidth={2} />
         <Txt x={px(C_CAL) + 8} y={py(rCal) + 16} size={10} color="var(--v-soft)" weight={600} halo>
-          калибратор
+          стандарт
         </Txt>
 
         {showShift && (
