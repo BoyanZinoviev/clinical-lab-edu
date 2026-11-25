@@ -17,7 +17,7 @@ await writeFile(
 await esbuild.build({ entryPoints: ['/tmp/vc/entry.ts'], bundle: true, outfile: '/tmp/vc/bundle.mjs', format: 'esm', platform: 'node', logLevel: 'error' });
 const { contentById, topicsMod, refsMod } = await import('file:///tmp/vc/bundle.mjs');
 
-const expected = { turbidimetriya: 10, magnezii: 10, fosfor: 12, glyukoza: 12, kreatinin: 12, ise: 12, 'kravno-gazov': 12, hplc: 15, kalibraciya: 11, 'kachestven-kontrol': 13 };
+const expected = { turbidimetriya: 10, magnezii: 10, fosfor: 12, glyukoza: 12, kreatinin: 12, 'fraktsionirane-belteci': 16, ise: 12, 'kravno-gazov': 12, hplc: 15, kalibraciya: 11, 'kachestven-kontrol': 13 };
 const refList = refsMod.references;
 let bad = 0;
 const fail = (m) => { bad++; console.log('ГРЕШКА:', m); };

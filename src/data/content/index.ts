@@ -4,6 +4,7 @@ import { magnesiumContent } from './magnesium';
 import { phosphorusContent } from './phosphorus';
 import { glucoseContent } from './glucose';
 import { creatinineContent } from './creatinine';
+import { proteinFractionationContent } from './protein-fractionation';
 import { iseContent } from './ise';
 import { bloodGasContent } from './bloodGas';
 import { hplcContent } from './hplc';
@@ -17,6 +18,7 @@ export const contentById: Record<string, ModuleContent> = {
   fosfor: phosphorusContent,
   glyukoza: glucoseContent,
   kreatinin: creatinineContent,
+  'fraktsionirane-belteci': proteinFractionationContent,
   ise: iseContent,
   'kravno-gazov': bloodGasContent,
   hplc: hplcContent,

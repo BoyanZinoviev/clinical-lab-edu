@@ -326,6 +326,110 @@ export const references: Reference[] = [
     note: 'Пример за кинетичен реактив: абсорбцията се отчита 30 s и 90 s след добавяне на пробата; резултатът се изчислява спрямо стандарт с известна концентрация (в листовката – 2 mg/dL).',
   },
 
+  /* ───────── Фракциониране на белтъци ───────── */
+  {
+    id: 'jenkins2009',
+    kind: 'article',
+    citation: 'Jenkins MA. Serum and urine electrophoresis for detection and identification of monoclonal proteins. Clin Biochem Rev. 2009;30(3):119–122.',
+    note: 'История от течна среда през агароза до капилярна електрофореза; основна цел на SPE – откриване на парапротеин; агароза с 5 и повече ленти.',
+  },
+  {
+    id: 'aafp-spe2005',
+    kind: 'article',
+    citation: 'O’Connell TX, Horita TJ, Kasravi B. Understanding and interpreting serum protein electrophoresis. Am Fam Physician. 2005;71(1):105–112.',
+    note: 'Фракции на серумните белтъци и общ преглед на моделите; образователен източник.',
+  },
+  {
+    id: 'johansson1972',
+    kind: 'article',
+    citation: 'Johansson BG. Agarose gel electrophoresis. Scand J Clin Lab Invest. 1972;29(Suppl 124):7–19.',
+    note: 'Проста техника с агароза: 15 проби за по-малко от час; приложима за плазмени белтъци и липопротеини.',
+  },
+  {
+    id: 'jeppsson1979',
+    kind: 'article',
+    citation: 'Jeppsson JO, Laurell CB, Franzén B. Agarose gel electrophoresis. Clin Chem. 1979;25(4):629–638.',
+    note: 'Общ преглед на електрофорезата в агарозен гел.',
+  },
+  {
+    id: 'dennis1987',
+    kind: 'article',
+    citation: 'Dennis PM, Biegler B, Papas R. Improved measurement of monoclonal paraproteins in serum using agarose gel electrophoresis. Ann Clin Biochem. 1987;24(1):73–76.',
+    note: 'Денситометрия при около 520 nm след оцветяване с Coomassie Brilliant Blue G.',
+  },
+  {
+    id: 'bossuyt2003',
+    kind: 'article',
+    citation: 'Bossuyt X. Separation of serum proteins by automated capillary zone electrophoresis. Clin Chem Lab Med. 2003;41(6):762–772.',
+    note: 'Автоматизирана капилярна зонална електрофореза на серумни белтъци; откриване и идентифициране на моноклонални белтъци; специфични интерференции.',
+  },
+  {
+    id: 'keir1990',
+    kind: 'article',
+    citation: 'Keir G, Luxton RW, Thompson EJ. Isoelectric focusing of cerebrospinal fluid immunoglobulin G: an annotated update. Ann Clin Biochem. 1990;27:436–443.',
+    note: 'IEF в агароза за откриване на олигоклонален IgG в ликвор.',
+  },
+  {
+    id: 'birmingham-ocb',
+    kind: 'laboratory',
+    citation: 'University of Birmingham, Clinical Immunology Service. Samples, method and oligoclonal bands (OCBs) – информационна страница за лабораторията.',
+    note: 'Необходимост от успоредна серумна проба; две или повече ленти само в ликвора; IEF като най-чувствителен метод.',
+  },
+  {
+    id: 'ofarrell1975',
+    kind: 'article',
+    citation: 'O’Farrell PH. High resolution two-dimensional electrophoresis of proteins. J Biol Chem. 1975;250(10):4007–4021.',
+    note: 'Класическият метод на 2D електрофореза: IEF в първо и SDS-PAGE във второ измерение.',
+  },
+  {
+    id: 'anderson1977',
+    kind: 'article',
+    citation: 'Anderson NL, Anderson NG. High resolution two-dimensional electrophoresis of human plasma proteins. Proc Natl Acad Sci USA. 1977;74(12):5421–5425.',
+    note: 'Двумерна карта на плазмените белтъци на човека.',
+  },
+  {
+    id: 'amersham-iex',
+    kind: 'manufacturer',
+    citation: 'Amersham Biosciences. Ion Exchange Chromatography: Principles and Methods. Handbook 18-1114-21.',
+    note: 'Принципи на йонообменната хроматография: смоли, избор на pH и градиентно елуиране.',
+  },
+  {
+    id: 'amersham-affinity',
+    kind: 'manufacturer',
+    citation: 'Amersham Biosciences. Affinity Chromatography: Principles and Methods. Handbook 18-1022-29.',
+    note: 'Принципи на афинитетната хроматография: лиганди, свързване, промиване и елуиране.',
+  },
+  {
+    id: 'cuatrecasas1968',
+    kind: 'article',
+    citation: 'Cuatrecasas P, Wilchek M, Anfinsen CB. Selective enzyme purification by affinity chromatography. Proc Natl Acad Sci USA. 1968;61(2):636–643.',
+    note: 'Класическо описание на афинитетната хроматография с ковалентно закрепен лиганд.',
+  },
+  {
+    id: 'travis1976',
+    kind: 'article',
+    citation: 'Travis J, Bowen J, Tewksbury D, Johnson D, Pannell R. Isolation of albumin from whole human plasma and fractionation of albumin-depleted plasma. Biochem J. 1976;157(2):301–306.',
+    note: 'Cibacron Blue–Sepharose отнема около 98 % от албумина; остатъкът се фракционира с йонообмен върху DEAE-целулоза.',
+  },
+  {
+    id: 'gianazza1982',
+    kind: 'article',
+    citation: 'Gianazza E, Arnaud P. A general method for fractionation of plasma proteins: dye-ligand affinity chromatography on immobilized Cibacron Blue F3-GA. Biochem J. 1982;201(1):129–136.',
+    note: 'Cibacron Blue свързва и други плазмени белтъци – не е напълно специфичен.',
+  },
+  {
+    id: 'sigma-lmhplc',
+    kind: 'manufacturer',
+    citation: 'MilliporeSigma. Large molecule HPLC – режими за белтъци: обратнофазов, гел-филтрационен, йонообменен и хидрофобен (технически материал).',
+    note: 'Общ преглед на HPLC режимите за големи молекули.',
+  },
+  {
+    id: 'merck-blue',
+    kind: 'manufacturer',
+    citation: 'Cytiva / MilliporeSigma. Purification or removal of albumin: Blue Sepharose and Capto Blue (технически протокол).',
+    note: 'Cibacron Blue F3G-A свързва албумин електростатично и/или хидрофобно; свързва и някои ензими и други белтъци.',
+  },
+
   /* ───────── Производители ───────── */
   {
     id: 'inserts',

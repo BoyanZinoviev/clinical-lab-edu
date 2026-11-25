@@ -46,7 +46,7 @@ export function AppShell({ route, children }: { route: Route; children: ReactNod
         Към съдържанието
       </button>
       <Sidebar route={route} open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <div className="lg:pl-72">
+      <div className="overflow-x-clip lg:pl-72">
         <TopBar
           route={route}
           theme={theme}

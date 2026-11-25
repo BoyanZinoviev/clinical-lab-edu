@@ -9,6 +9,7 @@ import Magnesium from './pages/Magnesium';
 import Phosphorus from './pages/Phosphorus';
 import Glucose from './pages/Glucose';
 import Creatinine from './pages/Creatinine';
+import ProteinFractionation from './pages/ProteinFractionation';
 import ISE from './pages/ISE';
 import BloodGas from './pages/BloodGas';
 import HPLC from './pages/HPLC';
@@ -31,6 +32,8 @@ function Page({ path }: { path: string }) {
       return <Glucose />;
     case '/metodi/kreatinin':
       return <Creatinine />;
+    case '/metodi/fraktsionirane-belteci':
+      return <ProteinFractionation />;
     case '/metodi/ise':
       return <ISE />;
     case '/metodi/kravno-gazov-analiz':
